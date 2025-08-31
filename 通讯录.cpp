@@ -41,7 +41,15 @@ void addperson(phonebook*pb){
 	cin>>pb->personArray[pb->m_size].m_name;
 
 	cout<<"请输入年龄："<<endl;
-	cin>>pb->personArray[pb->m_size].m_age;
+	int age=0;
+	while(true){
+		cin>>age;
+		if(0<=age&&age<=150){
+			pb->personArray[pb->m_size].m_age=age;
+			break;
+		}
+		cout<<"输入有误，请重新输入"<<endl;
+	}
 	
 	cout<<"请输入性别："<<endl;
 	cout<<"1---男"<<endl;
